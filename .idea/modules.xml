@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MifareClassic.iml" filepath="$PROJECT_DIR$/MifareClassic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commandfamily-mifareclassic/commandfamily-mifareclassic.iml" filepath="$PROJECT_DIR$/commandfamily-mifareclassic/commandfamily-mifareclassic.iml" />
+    </modules>
+  </component>
+</project>
