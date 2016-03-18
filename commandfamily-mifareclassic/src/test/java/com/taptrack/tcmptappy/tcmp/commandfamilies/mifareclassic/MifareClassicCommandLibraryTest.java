@@ -8,8 +8,8 @@ import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.commands.ReadMi
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicDetectedResponse;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicLibraryErrorResponse;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicLibraryVersionResponse;
+import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicReadSuccessResponse;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicTimeoutResponse;
-import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.ReadSuccessResponse;
 import com.taptrack.tcmptappy.tcmp.common.CommandCodeNotSupportedException;
 import com.taptrack.tcmptappy.tcmp.common.ResponseCodeNotSupportedException;
 
@@ -88,7 +88,7 @@ public class MifareClassicCommandLibraryTest {
         testResponse(new MifareClassicLibraryErrorResponse(), MifareClassicLibraryErrorResponse.class);
         testResponse(new MifareClassicLibraryVersionResponse(), MifareClassicLibraryVersionResponse.class);
         testResponse(new MifareClassicTimeoutResponse(), MifareClassicTimeoutResponse.class);
-        testResponse(new ReadSuccessResponse(), ReadSuccessResponse.class);
+        testResponse(new MifareClassicReadSuccessResponse(), MifareClassicReadSuccessResponse.class);
 
         boolean responseCodeNotSupportedThrown = false;
         try {

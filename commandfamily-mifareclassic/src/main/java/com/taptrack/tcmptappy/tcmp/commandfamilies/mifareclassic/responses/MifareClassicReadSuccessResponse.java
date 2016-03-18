@@ -10,21 +10,21 @@ import java.util.Arrays;
 /**
  * Response indicating a successful read from a MIFARE Classic
  */
-public class ReadSuccessResponse extends AbstractMifareClassicMessage {
+public class MifareClassicReadSuccessResponse extends AbstractMifareClassicMessage {
     public static final byte COMMAND_CODE = 0x01;
     protected byte startBlock;
     protected byte endBlock;
     protected byte[] uid;
     protected byte[] data;
 
-    public ReadSuccessResponse() {
+    public MifareClassicReadSuccessResponse() {
         startBlock = 0x00;
         endBlock = 0x00;
         uid = new byte[0];
         data = new byte[0];
     }
 
-    public ReadSuccessResponse(byte startBlock, byte endBlock, byte[] uid, byte[] data) {
+    public MifareClassicReadSuccessResponse(byte startBlock, byte endBlock, byte[] uid, byte[] data) {
         this.startBlock = startBlock;
         this.endBlock = endBlock;
         this.uid = uid;

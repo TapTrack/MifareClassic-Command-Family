@@ -8,8 +8,8 @@ import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.commands.ReadMi
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicDetectedResponse;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicLibraryErrorResponse;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicLibraryVersionResponse;
+import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicReadSuccessResponse;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicTimeoutResponse;
-import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.ReadSuccessResponse;
 import com.taptrack.tcmptappy.tcmp.common.CommandCodeNotSupportedException;
 import com.taptrack.tcmptappy.tcmp.common.CommandFamily;
 import com.taptrack.tcmptappy.tcmp.common.ResponseCodeNotSupportedException;
@@ -59,8 +59,8 @@ public class MifareClassicCommandLibrary implements CommandFamily {
             case MifareClassicTimeoutResponse.COMMAND_CODE:
                 parsedMessage = new MifareClassicTimeoutResponse();
                 break;
-            case ReadSuccessResponse.COMMAND_CODE:
-                parsedMessage = new ReadSuccessResponse();
+            case MifareClassicReadSuccessResponse.COMMAND_CODE:
+                parsedMessage = new MifareClassicReadSuccessResponse();
                 break;
             default:
                 throw new ResponseCodeNotSupportedException(

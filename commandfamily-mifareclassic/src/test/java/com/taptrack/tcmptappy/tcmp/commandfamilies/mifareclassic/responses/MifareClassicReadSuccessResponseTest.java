@@ -9,7 +9,7 @@ import java.util.Random;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
-public class ReadSuccessResponseTest {
+public class MifareClassicReadSuccessResponseTest {
     Random rand = new Random();
 
     private byte[] generateRandomData(byte startBlock, byte endBlock) {
@@ -59,7 +59,7 @@ public class ReadSuccessResponseTest {
         byte[] shortPayload = generateTestPayload(uidShort, start, end, data);
         byte[] longPayload = generateTestPayload(uidLong,start,end,data);
 
-        ReadSuccessResponse longResponse = new ReadSuccessResponse();
+        MifareClassicReadSuccessResponse longResponse = new MifareClassicReadSuccessResponse();
         longResponse.parsePayload(longPayload);
 
         assertEquals(longResponse.getStartBlock(), start);
@@ -67,7 +67,7 @@ public class ReadSuccessResponseTest {
         assertArrayEquals(longResponse.getUid(), uidLong);
         assertArrayEquals(longResponse.getData(),data);
 
-        ReadSuccessResponse shortResponse = new ReadSuccessResponse();
+        MifareClassicReadSuccessResponse shortResponse = new MifareClassicReadSuccessResponse();
         shortResponse.parsePayload(shortPayload);
 
         assertEquals(shortResponse.getStartBlock(), start);
@@ -87,16 +87,16 @@ public class ReadSuccessResponseTest {
         byte[] shortPayload = generateTestPayload(uidShort, start, end, data);
         byte[] longPayload = generateTestPayload(uidLong,start,end,data);
 
-        ReadSuccessResponse longResponse = new ReadSuccessResponse(start,end,uidLong,data);
+        MifareClassicReadSuccessResponse longResponse = new MifareClassicReadSuccessResponse(start,end,uidLong,data);
         assertArrayEquals(longResponse.getPayload(),longPayload);
 
-        ReadSuccessResponse shortResponse = new ReadSuccessResponse(start,end,uidShort,data);
+        MifareClassicReadSuccessResponse shortResponse = new MifareClassicReadSuccessResponse(start,end,uidShort,data);
         assertArrayEquals(shortResponse.getPayload(),shortPayload);
     }
 
     @Test
     public void testGetCommandCode() throws Exception {
-        ReadSuccessResponse readSuccessResponse = new ReadSuccessResponse();
-        assertEquals(readSuccessResponse.getCommandCode(),0x01);
+        MifareClassicReadSuccessResponse mifareClassicReadSuccessResponse = new MifareClassicReadSuccessResponse();
+        assertEquals(mifareClassicReadSuccessResponse.getCommandCode(),0x01);
     }
 }
