@@ -5,6 +5,9 @@ import com.taptrack.tcmptappy.tcmp.StandardErrorResponse;
 import com.taptrack.tcmptappy.tcmp.StandardErrorResponseDelegate;
 import com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.AbstractMifareClassicMessage;
 
+/**
+ * An error occurred executing a MIFARE Classic command library operation
+ */
 public class MifareClassicLibraryErrorResponse extends AbstractMifareClassicMessage implements StandardErrorResponse {
     public static final byte COMMAND_CODE = 0x7F;
     protected StandardErrorResponseDelegate delegate;

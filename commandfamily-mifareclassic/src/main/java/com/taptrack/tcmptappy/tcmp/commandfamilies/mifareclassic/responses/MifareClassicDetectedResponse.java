@@ -22,10 +22,19 @@ public class MifareClassicDetectedResponse extends AbstractMifareClassicMessage 
 
     public MifareClassicDetectedResponse() {
         type = 0x00;
-        uid = new byte[0];
+        uid = new byte[4];
     }
 
+    /**
+     * Mifare Classic was detected
+     * @param type one of {@link com.taptrack.tcmptappy.tcmp.commandfamilies.mifareclassic.responses.MifareClassicDetectedResponse.ClassicType}
+     * @param uid 4- or 7-byte uid
+     * @throws IllegalArgumentException UID is too short to be valid
+     */
     public MifareClassicDetectedResponse(byte type, byte[] uid) {
+        if(uid.length < 4)
+            throw new IllegalArgumentException("UID too short to be valid");
+
         this.type = type;
         this.uid = uid;
     }
@@ -61,8 +70,11 @@ public class MifareClassicDetectedResponse extends AbstractMifareClassicMessage 
     /**
      * Set the UID of the tag that was detected
      * @param uid 4- or 7-byte UID
+     * @throws IllegalArgumentException If the UID is less than 4 bytes
      */
     public void setUid(byte[] uid) {
+        if(uid.length < 4)
+            throw new IllegalArgumentException("UID is too short to be valid");
         this.uid = uid;
     }
 
